@@ -3,12 +3,15 @@ import os
 import urllib
 import pandas as pd
 
-def _get_sql_query_text(update, context):
+def _get_sql_query_text(context_dict):
     
-    Dezenas_Fixas = context.user_data['Dezenas_Fixas']
-    Par_Impar = context.user_data['Par_Impar']
-    Flag_Ultimo_jogo = context.user_data['Flag_Ultimo_jogo']
-    Qtd_Jogos = context.user_data['Qtd_Jogos']
+    
+
+    Dezenas_Fixas = context_dict['Dezenas_Fixas']
+    Par_Impar = context_dict['Par_Impar']
+    Flag_Ultimo_jogo = context_dict['Flag_Ultimo_jogo']
+    Qtd_Jogos = context_dict['Qtd_Jogos']
+
     cols = 'D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, CHAVE'
 
 
