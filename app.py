@@ -23,7 +23,7 @@ updater = Updater(token=TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 
 app.last_message = ''
-
+app.last_message_fila = ''
 
 from scripts.gerar_jogos import _gerar_jogos
 from scripts.config import TOKEN, CANAL_ID
@@ -70,10 +70,18 @@ def recive_message():
 def mensagem():
     return render_template('mensagem.html', mensagem=app.last_message)
 
-@app.route('/mensagemfila', methods=['POST'])
-def mensagem_fila():
+@app.route('/receberfila', methods=['POST'])
+def receber_fila():
     json_data = request.get_json()
-    return render_template('mensagem.html', mensagem=str(json_data))
+    app.last_message_fila = json_data
+    return 200
+
+
+
+@app.route('/mensagemfila')
+def mensagem_fila():
+    
+    return render_template('mensagem.html', mensagem=app.last_message_fila)
 
 
 
