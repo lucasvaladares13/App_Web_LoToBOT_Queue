@@ -70,7 +70,7 @@ def recive_message():
 def mensagem():
     return render_template('mensagem.html', mensagem=app.last_message)
 
-@app.route('/mensagem_fila', methods=['POST'])
+@app.route('/mensagemfila', methods=['POST'])
 def mensagem_fila():
     json_data = request.get_json()
     return render_template('mensagem.html', mensagem=str(json_data))
