@@ -22,7 +22,7 @@ logging.error('This is an error message')
 updater = Updater(token=TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 
-last_message = None
+app.last_message = ''
 
 
 from scripts.gerar_jogos import _gerar_jogos
@@ -69,6 +69,12 @@ def recive_message():
 @app.route('/mensagem')
 def mensagem():
     return render_template('mensagem.html', mensagem=app.last_message)
+
+@app.route('/mensagem_fila', methods=['POST'])
+def mensagem_fila():
+    json_data = request.get_json()
+    return render_template('mensagem.html', mensagem=str(json_data))
+
 
 
 if __name__ == '__main__':
