@@ -71,7 +71,7 @@ def mensagem():
 def receber_fila():
     json_data = request.get_json()
     app.last_message_fila = json_data
-    return 200
+    return '200'
 
 
 
