@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'app-web-LoToBOT-admin'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E39EA2ACAAAC45DA83675404896DE23A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8BC22088836F40319D5F95B5BD40C9D0 }}
