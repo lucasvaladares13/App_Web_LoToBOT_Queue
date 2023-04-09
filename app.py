@@ -32,9 +32,6 @@ dispatcher.add_handler(MessageHandler(Filters.chat(CANAL_ID), _gerar_jogos))
 
 
 
-
-
-
 @app.route('/')
 def index():
    print('Request for index page received')
