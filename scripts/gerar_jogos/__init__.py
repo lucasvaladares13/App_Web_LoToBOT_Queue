@@ -60,7 +60,7 @@ def _gerar_jogos(update, context):
 
 def _gerar_jogos_fila(mensagem):
     import telegram
-    from scripts.config import TOKEN, CANAL_ID
+    from scripts.config import TOKEN_WORKER, CANAL_ID
 
     context_dict = init_user_data()
     
@@ -107,7 +107,7 @@ def _gerar_jogos_fila(mensagem):
         try:
             data = date.today()
             data_em_texto = data.strftime('%d_%m_%Y')
-            bot = telegram.Bot(token=TOKEN)
+            bot = telegram.Bot(token=TOKEN_WORKER)
 
             # Envia a mensagem de teste
             bot.send_document(chat_id=CANAL_ID, document=output, filename=f'{context_dict["user_id"]}-Jogos_LotoFacil_{data_em_texto}.xlsx')
